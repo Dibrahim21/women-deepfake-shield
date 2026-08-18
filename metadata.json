@@ -1,0 +1,6 @@
+{
+  "name": "Women Deepfake Shield",
+  "description": "AI-assisted forensic media authenticity analyzer and digital identity protection platform.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+python-multipart
+torch
+torchvision
+transformers
+huggingface_hub
+ultralytics
+pillow
+numpy
+timm

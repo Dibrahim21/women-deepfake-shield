@@ -1,0 +1,13 @@
+{
+  "include": ["."],
+  "venvPath": ".",
+  "venv": ".venv",
+  "executionEnvironments": [
+    {
+      "root": ".",
+      "extraPaths": [
+        ".venv/Lib/site-packages"
+      ]
+    }
+  ]
+}
