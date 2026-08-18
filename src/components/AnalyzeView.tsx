@@ -200,7 +200,7 @@ export const AnalyzeView: React.FC<AnalyzeViewProps> = ({
         throw new Error('You are not logged in. Please login again.');
       }
 
-      const postResponse = await fetch('http://localhost:5000/api/analyze', {
+      const postResponse = await fetch('https://women-deepfake-backend.onrender.com/api/analyze', {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${session.access_token}`,
@@ -230,7 +230,7 @@ export const AnalyzeView: React.FC<AnalyzeViewProps> = ({
       }
 
       // Step 2: GET /api/analyze/:analysisId to fetch full stored analysis record
-      const getResponse = await fetch(`http://localhost:5000/api/analyze/${analysisId}`, {
+      const getResponse = await fetch(`https://women-deepfake-backend.onrender.com/api/analyze/${analysisId}`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${session.access_token}`,
@@ -395,7 +395,7 @@ export const AnalyzeView: React.FC<AnalyzeViewProps> = ({
         setErrorMessage('Analysis request was cancelled.');
       } else {
         setErrorMessage(
-          err.message || 'Network error: Could not reach backend server at http://localhost:5000. Ensure the backend is running.'
+          err.message || 'Network error: Could not reach Backend server at https://women-deepfake-backend.onrender.com Ensure the backend is running.'
         );
       }
     }
