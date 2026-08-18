@@ -36,6 +36,8 @@ import {
   PRESET_SAMPLES
 } from '../data/mockData';
 
+const API_URL = (import.meta.env.VITE_API_URL || 'https://women-deepfake-backend.onrender.com').replace(/\/$/, '');
+
 interface AnalyzeViewProps {
   currentCase?: CaseReport;
   onNavigate: (view: ViewMode) => void;
@@ -200,7 +202,7 @@ export const AnalyzeView: React.FC<AnalyzeViewProps> = ({
         throw new Error('You are not logged in. Please login again.');
       }
 
-      const postResponse = await fetch('https://women-deepfake-backend.onrender.com/api/analyze', {
+      const postResponse = await fetch(`${API_URL}/api/analyze`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${session.access_token}`,
@@ -230,7 +232,7 @@ export const AnalyzeView: React.FC<AnalyzeViewProps> = ({
       }
 
       // Step 2: GET /api/analyze/:analysisId to fetch full stored analysis record
-      const getResponse = await fetch(`https://women-deepfake-backend.onrender.com/api/analyze/${analysisId}`, {
+      const getResponse = await fetch(`${API_URL}/api/analyze/${analysisId}`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${session.access_token}`,
